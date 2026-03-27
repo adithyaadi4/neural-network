@@ -1,30 +1,93 @@
-A simple project built to understand neural networks. a neural network built from scratch to detect lines.
-Htop        Hmiddle     Hdown
-1  1  1     0  0  0     0  0  0
-0  0  0     1  1  1     0  0  0
-0  0  0     0  0  0     1  1  1
+# 🧠 Neural Network from Scratch – Line Detection
 
-Vleft       Vmiddle     Vright
-1  0  0     0  1  0     0  0  1
-1  0  0     0  1  0     0  0  1
-1  0  0     0  1  0     0  0  1
+A simple project built to understand neural networks.  
+This project implements a neural network from scratch to detect line patterns in a 3×3 grid.
 
- detects all these lines.learns through training where algorithms like relu,softmax have been used.
+---
 
- network architecture
- Input Layer  → 9 neurons   (one per pixel)
-Hidden Layer → 6 neurons   (one per line type)
-Output Layer → 6 neurons   (Htop, Hmiddle, Hdown, Vleft, Vmiddle, Vright)
+## 🎯 Patterns Learned
 
-W1 = (9×6) = 54 weights
-W2 = (6×6) = 36 weights
-Total       = 90 weights
+### Horizontal Lines
 
-how it works?
-Forward pass:
-Input → weighted sum → ReLU → weighted sum → Softmax → Prediction
+```
+Htop
+1 1 1
+0 0 0
+0 0 0
 
-Backward pass:
-Loss → output gradient → W2 gradient → hidden gradient → W1 gradient → update weights
+Hmiddle
+0 0 0
+1 1 1
+0 0 0
 
-Repeat 1000 epochs until network learns!
+Hdown
+0 0 0
+0 0 0
+1 1 1
+```
+
+---
+
+### Vertical Lines
+
+```
+Vleft
+1 0 0
+1 0 0
+1 0 0
+
+Vmiddle
+0 1 0
+0 1 0
+0 1 0
+
+Vright
+0 0 1
+0 0 1
+0 0 1
+```
+
+---
+
+## 🚀 What It Does
+
+- Detects all the above line patterns  
+- Learns from training data  
+- Improves predictions over time  
+
+---
+
+## ⚙️ How It Works
+
+- Takes a 3×3 grid as input  
+- Processes it through a neural network  
+- Uses:
+  - ReLU activation  
+  - Softmax output  
+
+---
+
+## 🔁 Training
+
+- Trained over multiple epochs  
+- Uses backpropagation to update weights  
+- Gradually learns correct classifications  
+
+---
+
+## 💡 Example Output
+
+```
+Input:
+1 1 1
+0 0 0
+0 0 0
+
+Prediction → Htop ✅
+```
+
+---
+
+## 📌 Note
+
+> Built using pure NumPy — no ML frameworks used.
